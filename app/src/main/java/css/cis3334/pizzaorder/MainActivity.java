@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         // Set up the Spinner
         spinnerToppings = (Spinner) findViewById(R.id.spinnerToppings);
 
+        //Pizza order
         pizzaOrder = new PizzaOrder(this);
 
+        //Get prices from Pizza Order object
         rbSmall.append(" -- Price: $" + pizzaOrder.getPrice(Pizza.pizzaSize.SMALL).toString());
         rbMedium.append(" -- Price: $" + pizzaOrder.getPrice(Pizza.pizzaSize.MEDIUM).toString());
         rbLarge.append(" -- Price: $" + pizzaOrder.getPrice(Pizza.pizzaSize.LARGE).toString());
@@ -67,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         String size;
         String topping;
         boolean xtraCheese;
+        boolean delivery;
 
+        //Get size by radio button
         if(rbSmall.isChecked()){
             size="small";
         }
@@ -78,10 +82,16 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
             size="large";
         }
 
+        //Get toppings, extra cheese and delivery from UI
         topping = spinnerToppings.getSelectedItem().toString();
         xtraCheese = chkbxCheese.isChecked();
+        delivery = chkbxDelivery.isChecked();
 
+        //Make order with above variables
         orderDescription = pizzaOrder.OrderPizza(topping, size, xtraCheese);
+
+        //If delivery
+        pizzaOrder.setDelivery(delivery);
 
         txtTotal.setText(getResources().getString(R.string.total) + " $" + pizzaOrder.getTotalBill().toString());
         // ****** For the Assignment, students will modify the order to fit the type of pizza the user selects using the UI widgets
