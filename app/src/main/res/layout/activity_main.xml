@@ -65,10 +65,10 @@
         android:id="@+id/checkBoxDeluvery" />
 
     <TextView
-        android:text="Total Due:"
+        android:id="@+id/textViewTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewTotal" />
+        android:text="@string/total" />
 
     <TextView
         android:id="@+id/textViewStatus"

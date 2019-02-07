@@ -8,4 +8,5 @@
         <item>Chicken</item>
         <item>Vegitarian</item>
     </string-array>
+    <string name="total">Total Due: </string>
 </resources>
