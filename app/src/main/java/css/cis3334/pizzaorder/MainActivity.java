@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
 
         pizzaOrder = new PizzaOrder(this);
 
-        rbSmall.setText(rbSmall.getText() + " $" + pizzaOrder.getPrice(Pizza.pizzaSize.SMALL).toString());
-        rbMedium.setText(rbMedium.getText() + " $" + pizzaOrder.getPrice(Pizza.pizzaSize.MEDIUM).toString());
-        rbLarge.setText(rbLarge.getText() + " $" + pizzaOrder.getPrice(Pizza.pizzaSize.LARGE).toString());
+        rbSmall.setText(rbSmall.getText() + " -- Price: $" + pizzaOrder.getPrice(Pizza.pizzaSize.SMALL).toString());
+        rbMedium.setText(rbMedium.getText() + " -- Price: $" + pizzaOrder.getPrice(Pizza.pizzaSize.MEDIUM).toString());
+        rbLarge.setText(rbLarge.getText() + " -- Price: $" + pizzaOrder.getPrice(Pizza.pizzaSize.LARGE).toString());
 
     }
 
