@@ -63,7 +63,26 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         String orderDescription = "No orders yet";
 
         // ****** For the Practice Activity, students need to call to OrderPizza here
-        orderDescription = pizzaOrder.OrderPizza("Peperoni", "large", false  );
+        //orderDescription = pizzaOrder.OrderPizza("Peperoni", "large", false  );
+        String size;
+        String topping;
+        boolean xtraCheese;
+
+        if(rbSmall.isChecked()){
+            size="small";
+        }
+        else if(rbMedium.isChecked()){
+            size="medium";
+        }
+        else {
+            size="large";
+        }
+
+        topping = spinnerToppings.getSelectedItem().toString();
+        xtraCheese = chkbxCheese.isChecked();
+
+        orderDescription = pizzaOrder.OrderPizza(topping, size, xtraCheese);
+
         txtTotal.setText(getResources().getString(R.string.total) + " $" + pizzaOrder.getTotalBill().toString());
         // ****** For the Assignment, students will modify the order to fit the type of pizza the user selects using the UI widgets
 
